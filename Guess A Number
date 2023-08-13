@@ -1,0 +1,25 @@
+const targetNumber = Math.floor(Math.random() * 100); // Generates a random number between 0 and 99
+
+let guessedNumber = parseInt(prompt("Enter a Number")); // Parse input to an integer
+
+let numberOfGuesses = 1; // Initialize the number of guesses
+
+while (guessedNumber !== targetNumber) {
+  if (isNaN(guessedNumber)) {
+    console.log("Invalid input. Please enter a valid number.");
+  }
+else if (guessedNumber < targetNumber) {
+    console.log("Your guess is too low.");
+  } 
+else {
+    console.log("Your guess is too high.");
+  }
+  
+  guessedNumber = parseInt(prompt("Enter a Number")); // Ask for input again
+
+  numberOfGuesses++; // Increment the number of guesses
+}
+
+const score = 100 - numberOfGuesses; // Calculate the score
+
+console.log(`Congratulations! Your guess is correct. Your score is: ${score}`);
